@@ -43,6 +43,13 @@ const bot_start = () => {
             return bot.sendMessage(chatId, 'Отгадывай!')
         }
 
+        if (text === '/restart') {
+            await bot.sendMessage(chatId, 'Я загадаю тебе число от 0 до 9. Попробуй отгадать!')
+            const randomNumber = Math.floor(Math.random() *10)
+            chats[chatId] = randomNumber;
+            return bot.sendMessage(chatId, 'Отгадывай!')
+        }
+
         return bot.sendMessage(chatId,'Я тебя не понимаю :( Попробуй еще раз!')
 
         
