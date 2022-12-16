@@ -39,13 +39,15 @@ const bot_start = () => {
             return bot.sendMessage(chatId, `${msg.from.first_name}, добро пожаловать на проект Fourtune24!`)
         }
 
+        if (text === '/game') {
+            return startGame(chatId)
+        }
+        
         if (text === '/info') {
             return bot.sendMessage(chatId, `${msg.chat.username}, добро пожаловать на проект Fourtune24!`)
         }
 
-        if (text === '/game') {
-            return startGame(chatId)
-        }
+     
 
         return bot.sendMessage(chatId, 'Я тебя не понимаю :( Попробуй еще раз!')
 
